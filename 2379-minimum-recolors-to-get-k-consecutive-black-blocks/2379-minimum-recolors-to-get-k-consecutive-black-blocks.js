@@ -4,30 +4,29 @@
  * @return {number}
  */
 var minimumRecolors = function(blocks, k) {
-  let createBB = '';
-
-  for (let j = 0; j < k; j ++) {
-    createBB += 'B';
-  }
-  if (blocks.indexOf(createBB) > 0) return 0;
-
   let minRecolor = Infinity;
-  let currentBlock = '';
-  let first = 0;
-  let last = k
 
-  while (last <= blocks.length) {
-    currentBlock = blocks.substring(first,last)
-    let wCount = 0;
-    for (let p = 0; p < currentBlock.length; p ++) {
-      if (currentBlock[p] === 'W') {
-        wCount ++;
+  for (let i = 0; i < blocks.length; i ++) {
+    let blackBoxCount = 0, whiteBoxCount = 0;
+    for (let j = i; j < blocks.length; j ++) {
+      if (blocks.charAt(j) === 'B') blackBoxCount++
+      else {
+        blackBoxCount ++
+        whiteBoxCount ++
+      }
+      if (blackBoxCount === k) {
+        minRecolor = Math.min(minRecolor, whiteBoxCount);
+        break;
       }
     }
-    minRecolor = Math.min(minRecolor, wCount)
-    first ++
-    last ++
   }
 
   return minRecolor;
 };
+
+
+
+
+
+
+
