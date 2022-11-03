@@ -3,12 +3,13 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-  let sArray = s.split(' ');
-  let reversed = []
-
-  for (let word of sArray) {
-    reversed.push(word.split('').reverse().join(''));
-
+  let reverseStr = '';
+  
+  for (let i = s.length - 1; i >= 0; i --) {
+    reverseStr += s[i];
   }
-  return reversed.join(' ');
+  reverseStr = reverseStr.split(' ');
+  reverseStr = reverseStr.reverse();
+  reverseStr = reverseStr.join(' ');
+  return reverseStr;
 };
