@@ -4,13 +4,18 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-  var output = [];
-  for (var i = 0; i < nums.length; i ++) {
-    for (var j = i + 1; j < nums.length; j ++) {
-      if (nums[i] + nums[j] === target) {
-        output.push(i, j);
-      }
+  let i = 0;
+  let j = i+1;
+  
+  while (j !== undefined) {
+    let sum = nums[i] + nums[j]
+    if (sum === target) {
+      return [i,j];
+    } else if (nums[j] === undefined) {
+      i ++;
+      j = i+1;
+    } else {  
+      j ++;
     }
   }
-  return output
 };
