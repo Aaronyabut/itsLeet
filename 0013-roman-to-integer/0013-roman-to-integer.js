@@ -3,6 +3,7 @@
  * @return {number}
  */
 var romanToInt = function(s) {
+  
   var data = {
     I : 1,
     V : 5,
@@ -29,5 +30,5 @@ var romanToInt = function(s) {
 
 
   }
-  return count
+  return count;
 };
