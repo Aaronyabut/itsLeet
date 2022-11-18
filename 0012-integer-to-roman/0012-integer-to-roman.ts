@@ -1,4 +1,4 @@
-function intToRoman(num: number): any {
+function intToRoman(num: number): string {
   const numberals = {
     I: 1,
     V: 5,
@@ -8,8 +8,8 @@ function intToRoman(num: number): any {
     D: 500,
     M: 1000
   }
-  let romanNums = '';
-  let count = num;
+  let romanNums:string = '';
+  let count:number = num;
 
   while (count > 0) {
     if (count >= numberals.M) {
