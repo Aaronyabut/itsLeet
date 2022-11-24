@@ -10,23 +10,3 @@ class Solution:
                 c+=1
             j+=1
         return c
-# class Solution:
-#     def numOfSubarrays(self, arr: List[int], k: int, t: int) -> int:
-#         total = 0
-#         for i in range(len(arr)):
-#             left = k
-#             increment = 1
-#             add = arr[i]
-#             while left > 1:
-#                 try:
-#                     add += arr[i+increment]
-#                     increment += 1
-#                     left -= 1
-#                 except IndexError:
-#                     left -= 1
-#                     add = -1
-#                     pass
-#             average = add/k
-#             if average >= t:
-#                 total += 1
-#         return total
