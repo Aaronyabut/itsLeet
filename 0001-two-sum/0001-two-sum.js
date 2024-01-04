@@ -8,14 +8,14 @@ var twoSum = function(nums, target) {
   let j = i+1;
   
   while (j !== undefined) {
-    let sum = nums[i] + nums[j]
-    if (sum === target) {
-      return [i,j];
-    } else if (nums[j] === undefined) {
-      i ++;
-      j = i+1;
-    } else {  
-      j ++;
-    }
+      let sum = nums[i] + nums[j];
+      if (sum === target) {
+          return [i,j];
+      } else if (nums[j]===undefined) {
+          i++;
+          j=i+1;
+      } else {
+          j++;
+      }
   }
 };
